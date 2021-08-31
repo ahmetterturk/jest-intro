@@ -1,16 +1,18 @@
 function repeatMessage(message, repeatCount) {
-    // try {
-
-    // } catch (error) {
-
-    // }
-
     if (typeof message != "string") {
         throw "message is not a string";
     }
 
     if (isNaN(repeatCount)) {
         throw "repeatCount is not a number";
+    }
+
+    if (message === "") {
+        throw "message should not be an empty string"
+    }
+
+    if (message && (repeatCount === null || repeatCount === false || repeatCount === '' || repeatCount === 0)){
+        return message
     }
 
     let messageToShow = "";
@@ -20,7 +22,7 @@ function repeatMessage(message, repeatCount) {
     return messageToShow;
 }
 
-console.log(repeatMessage("Ahmet was here ", 0));
+console.log(repeatMessage("hello", 0));
 
 module.exports = {
     repeatMessage,
