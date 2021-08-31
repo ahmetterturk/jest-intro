@@ -3,16 +3,16 @@ function repeatMessage(message, repeatCount) {
         throw "message is not a string";
     }
 
-    if (isNaN(repeatCount)) {
-        throw "repeatCount is not a number";
+    if (message && (repeatCount === null || repeatCount === false || repeatCount === '' || repeatCount === 0 || repeatCount === undefined)){
+        return message
     }
+
+    // if (isNaN(repeatCount)) {
+    //     throw "repeatCount is not a number";
+    // }
 
     if (message === "") {
         throw "message should not be an empty string"
-    }
-
-    if (message && (repeatCount === null || repeatCount === false || repeatCount === '' || repeatCount === 0)){
-        return message
     }
 
     let messageToShow = "";
